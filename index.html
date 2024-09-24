@@ -9,33 +9,34 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-
 <body>
-  <header>
-    <div class="navbar bg-base-100 p-10">
-      <div class="navbar-start">
-            <a href="./blog.html">
-              <button id="donation-btn" class="btn bg-[#B4F461] font-bold">Blog</button>
-            </a>
+  <header class="">   
+    <nav class="">
+      <div class="navbar bg-base-100 p-10">
+        <div class="navbar-start">
+              <a href="./blog.html">
+                <button id="blog-btn" class="btn bg-[#B4F461] font-bold">Blog</button>
+              </a>
+        </div>
+        <div class="navbar-center">
+          <img src="./assets/logo.png" alt="">
+          <p class=" ml-3">Donate Bangladesh</p>
+        </div>
+        <div class="navbar-end">
+          <img src="./assets/coin.png" alt="">
+          <p id="account-balance" class=" ml-3"><span id="">10000 </span>BDT</p>
+        </div>
       </div>
-      <div class="navbar-center">
-        <img src="./assets/logo.png" alt="">
-        <p  class=" ml-3">Donate Bangladesh</p>
+      <!-- Donation Button and  History Button -->
+      <div class="flex justify-center mt-6 ">
+        <button id="donation-btn" class="text-2xl btn bg-[#B4F461] mr-3 ">Donation</button>
+        <button id="history-btn"  class="text-2xl btn">History</button>
       </div>
-      <div class="navbar-end">
-        <img src="./assets/coin.png" alt="">
-        <p class=" ml-3"><span id="">10000 </span>BDT</p>
-      </div>
-    </div>
-    <!-- Donation Button and  History Button -->
-    <div class="flex justify-center mt-6">
-      <button class="btn bg-[#B4F461] mr-3 ">Donation</button>
-      <button class="btn bg-[#B4F461]">History</button>
-    </div>
+    </nav>
   </header>
   <!-- This is divider -->
   <div class="divider"></div>
-  <main class="mx-3 lg: ml-24">
+  <main id="main-section" class="mx-3 lg: ml-24">
     <!-- This is first card -->
     <div class="card bg-base-100 w-[1100px] shadow-xl flex-col lg:flex-row">
       <img src="./assets/noakhali.png" alt="">
@@ -48,9 +49,11 @@
           help provide essential supplies and to those affected by this disaster. Every contribution, big or small,
           makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of
           those in need.</p>
-        <input class="border-2 rounded-sm w-full" type="number" placeholder="Write Donation Amount"> <br>
+        <input id="donation-balance-1" class="border-2 rounded-sm w-full" 
+        type="number" placeholder="Write Donation Amount"> <br>
         <div class="card-actions justify-end">
-          <button class="bg-green-600 rounded-sm p-1 w-full " onclick="my_modal_5.showModal()">Donate Now</button>
+          <button id="donate-btn-1" class="bg-green-600 rounded-sm p-1 w-full " 
+          onclick="my_modal_5.showModal()">Donate Now</button>
           <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box text-center">
               <h3 class="font-bold text-3xl">Congrates!</h3>
@@ -79,7 +82,7 @@
           help provide essential supplies and to those affected by this disaster. Every contribution, big or small,
           makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of
           those in need.</p>
-        <input class="border-2 rounded-sm w-full" type="number" placeholder="Write Donation Amount"> <br>
+        <input id="donation-balance-2"  class="border-2 rounded-sm w-full" type="number" placeholder="Write Donation Amount"> <br>
         <div class="card-actions justify-end">
           <button class="bg-green-600 rounded-sm p-1 w-full " onclick="my_modal_5.showModal()">Donate Now</button>
           <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -110,7 +113,7 @@
           help provide essential supplies and to those affected by this disaster. Every contribution, big or small,
           makes difference. Please join us in supporting the relief efforts and making a positive impact on the lives of
           those in need.</p>
-        <input class="border-2 rounded-sm w-full" type="number" placeholder="Write Donation Amount"> <br>
+        <input id="donation-balance-3"  class="border-2 rounded-sm w-full" type="number" placeholder="Write Donation Amount"> <br>
         <div class="card-actions justify-end">
           <button class="bg-green-600 rounded-sm p-1 w-full " onclick="my_modal_5.showModal()">Donate Now</button>
           <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
@@ -129,9 +132,10 @@
         </div>
       </div>
     </div>
-
+  </main>
+  
     <!-- This is history section -->
-    <section class="mt-10 hidden">
+    <section id="history-tab" class="mt-10 hidden px-20">
       <div tabindex="0" class="collapse collapse-arrow border-base-300 bg-base-200 border mt-10">
         <div class="collapse-title text-xl font-medium"> 56500 Taka is Dinated for Femaine-2024 at Feni, Bangladesh
         </div>
@@ -157,7 +161,7 @@
       </div>
       
     </section>
-  </main>
+
   <script src="./js/index.js"></script>
 </body>
 
