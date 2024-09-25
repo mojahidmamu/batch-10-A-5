@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <header id="header-blar" class="w-full sticky top-0 left-0 right-0 z-50">
+    <nav class="">
+      <div class="navbar bg-[#F9F7F3] lg:px-10">
+        <div class="navbar-start">
+          <a href="./blog.html">
+            <button id="blog-btn" class="btn bg-[#B4F461] font-bold">Blog</button>
+          </a>
+        </div>
+        <div class="navbar-center">
+          <img class="ml-1" src="./assets/logo.png" alt="">
+          <p class=" mr-3">Donate Bangladesh</p>
+        </div>
+        <div class="navbar-end">
+          <img src="./assets/coin.png" alt="">
+          <p class=" ml-3"><span id="account-balance">75000 </span>BDT</p>
+        </div>
+      </div>
+    </nav>
+    <!-- Donation Button and  History Button -->
+    <div class="flex justify-center  my-5">
+      <a href="./index.html"><button id="donation-btn" class="text-2xl btn  mr-3 ">Donation</button></a>
+      <a href="./history.html"><button id="history-btn" class="text-2xl btn bg-[#B4F461]">History</button></a>
+    </div>
+  </header>
+    
+    <main class="mt-6 lg:mt-2"> 
+        <div id="transaction-section">
+            <h2 class="text-4xl text-center">Donation History</h2>
+            <div id="transaction-container" class="space-y-4">
+                
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const transactionContainer = document.getElementById('transaction-container');
+            const transactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    
+            transactions.forEach(transaction => {
+                const div = document.createElement('div');
+                div.classList.add('border-2', 'p-4', 'rounded-lg','mt-7', 'lg:mt-10', 'lg:w-[1100px]', 'mx-2', 'lg:ml-24');
+                div.innerHTML = `
+                    <h4 class="text-2xl font-bold">${transaction.amount} Taka Donated for ${transaction.cause}</h4>
+                    <p>Date: ${transaction.date}</p>
+                `;
+                transactionContainer.appendChild(div);
+            });
+        });
+    </script>
+    
+     
+    
+    <script src="./js/navbar.js"></script>
+    <script src="./js/add-money.js"></script>
+    <script src="./js/cash-out.js"></script>
+    <script src="./js/library.js"></script>
+
+</body>
+</html>
+cdn.jsdelivr.net
